@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*
+
+    Color & font variables for the whole stylesheet & website for uniformity
+
+*/
+
+:root {
+    --body-colour: rgb(230, 240, 250);
+    --button-unhovered: rgb(200, 230, 250);
+    --button-hovered: rgb(100, 130, 200);
+    --medium: rgba(100, 130, 200, 0.5);
+    --header-font: 'Tinos';
+    --body-font: 'Arimo';
+}
+
+html {
+    font-family: var(--body-font);
+}
+
+nav {
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, nav, form button {
+    font-family: var(--header-font);
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+form button {
+    font-size: 1em;
+}
+
+form button:hover {
+    font-size: 1.25em;
+}
+
+input:hover {
+    font-size: 1.1em;
+    transition: 0.4s;
+}
+
+body {
+    background: var(--body-colour);
+}
+
+button {
+    background: var(--button-unhovered);
+    border: none;
+    padding: 1em;
+    font-size: 1em;
+    border-radius: 0.5em;
+    font-family: inherit;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    transition: 0.4s;
+    font-weight: 400;
+    box-shadow:var(--button-unhovered) 0px 0px 0.5em;
+    color: var(--button-hovered);
+    max-width: 80%;
+}
+
+.small {
+    max-width: 20%;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted var(--medium);;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 20%;
+    max-width: 50%;
+    background: rgba(200, 230, 250, 0.9);
+    color: var(--button-hovered);
+    text-align: left;
+    border-radius: 0.10em;
+    padding: 0.7em;
+    position: absolute;
+    z-index: 1;
+    bottom: 11em;
+    left: 50%;
+    margin-left: -12em;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.3em;
+    border-radius: 0.5em;
+    box-shadow: var(--button-unhovered) 0px 0px 0.5em;
+    font-family: var(--body-font);
+    line-height: 1.5;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--medium) transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.big {
+    font-size: 2em;
+    font-family: var(--header-font);
+}
+
+.big:hover {
+    font-size: 3em;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4em;
+}
+
+.center {
+    align-items: center;
+}
+
+.left {
+    align-items: left;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.shaded-container {
+    background: var(--button-unhovered);
+    padding: 2em;
+    margin: 2em;
+    border-radius: 0.5em;
+    box-shadow:0.5em 0.5em 0.5em var(--medium);
+}
+
+form, select {
+    min-width: 20em;
+    font-family: inherit;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: none;
+    background: transparent;
+    transition: width 0.4s ease-in-out;
+}
+
+.beautify {
+    width: 30em;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    color: inherit;
+    padding: 1em;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+
+
+input[type = text]:focus {
+    border: transparent;
+}
+
+.main {
+    font-weight: 500;
+    font-size: 1.3em;
+    background:var(--medium);
+    padding: 0.2em;
+    border-radius: 0.5em;
+    box-shadow: 0.1em 0.1em 0.5em var(--medium);
+    color:var(--body-colour);
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-family: var(--header-font);
+    text-transform: uppercase;
+}
+
+.internal {
+    font-weight: 400;
+    font-size: 0.8em;
+}
+
+.instructions {
+    font-weight: 400;
+    font-size: 0.8em;
+}
+
+button:hover {
+    background: var(--button-hovered);
+    color:var(--button-unhovered);
+    cursor: pointer;
+    box-shadow: 0 0 0.5em var(--button-hovered);
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.navbar-title {
+    font-size: 2.5em;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 0.10em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    font-size: 1em;
+    background-color: var(--button-hovered);
+    box-shadow: 0 0 0.5em var(--button-hovered);
+}
+
+nav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    padding-left: 2em;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+nav a:hover {
+    color: var(--button-unhovered);
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+nav a:after {
+    color: var(--button-unhovered);
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+table, th {
+    font-family: var(--header-font);
+    font-size: 1em;
+    background: var(--medium);
+    padding: 0.5em;
+    margin: 0.5em;
+    text-align: left;
+    transition: 0.4s;
+}
+
+table {
+    border-radius: 0.5em;
+}
+
+td {
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+
+.header-column {
+    font-weight: bold;
+}
+
+.body-column {
+    background:var(--button-unhovered);
+}

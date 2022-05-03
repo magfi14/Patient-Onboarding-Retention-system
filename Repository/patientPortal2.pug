@@ -1,0 +1,21 @@
+doctype html:5
+html   
+    head 
+        title Appointment Goal Page
+        include elements/head.pug
+    body 
+        include elements/navigation.pug
+        div.container.left.shaded-container#patient-intake
+            script(src="https://static.airtable.com/js/embed/embed_snippet_v1.js")
+            iframe.airtable-embed.airtable-dynamic-height(src="https://airtable.com/embed/shrgNy1EsHshhgdvc?backgroundColor=blue" frameborder="0" onmousewheel="" width="100%" height="1368" style="background: transparent; border: 1px solid #ccc;")
+        div.container.left.shaded-container#doctor-selection-form
+            form(id="appointment-goal" action="https://formspree.io/f/mdobwdje" method="post")
+                h1 Doctor
+                p.instructions Select the doctor from the list below you would like to schedule an appointment with. You can only select <b>one</b> doctor. The doctors available will match closest to your appointment goal.
+                input(type="radio" name="doctor" id="doctor" value="Dr. Smith")
+                label.internal(for = "doctor") Dr. Smith
+                br
+                input(type="radio" name="doctor" id="doctor" value="Dr. Jones")
+                label.internal(for = "doctor") Dr. Jones
+                br
+                button(type="button" onclick="window.location.href='patientPortal3.html'") Confirm

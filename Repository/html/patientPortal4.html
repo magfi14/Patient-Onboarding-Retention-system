@@ -1,0 +1,61 @@
+<!DOCTYPE html:5>
+<html>
+  <head> 
+    <title>Payment Processing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <viewport width="device-width" initial-scale="1"></viewport>
+    <link rel="stylesheet" href="../../CSS/styles.css"/>
+    <script src="../../JavaScript/config.js"></script>
+  </head>
+  <body>
+    <nav> 
+      <ul>
+        <li class="navbar-title">Patient Onboarding & Retention System (PORES)</li>
+        <li> <a href="patientPortal1.html">Schedule Appointment (Patient Portal)</a></li>
+        <li> <a href="login.html">Staff Portal</a></li>
+      </ul>
+    </nav>
+    <div class="container left shaded-container" id="payment-plan-selection-form">
+      <form id="payment-processing" action="https://formspree.io/f/meqnrvzg" method="post">
+        <h1>Payment Processing</h1>
+        <label class="main" for="payment-type">Payment Plan</label>
+        <p class="instructions">Select a payment plan from below.</p>
+        <input type="radio" name="payment-type" id="payment-type" value="Insurance"/>
+        <label class="internal" for="payment-type">Insurance</label><br/>
+        <input type="radio" name="payment-type" id="payment-type" value="Credit Card"/>
+        <label class="internal" for="payment-type">Credit Card</label><br/>
+        <input type="radio" name="payment-type" id="payment-type" value="Cash"/>
+        <label class="internal" for="payment-type">Cash</label><br/>
+        <input type="radio" name="payment-type" id="payment-type" value="Check"/>
+        <label class="internal" for="payment-type">Check</label><br/>
+        <button type="submit">Confirm</button>
+      </form>
+    </div>
+    <div class="container left shaded-container" id="insurance-fillout-form">
+      <form id="payment-processing" action="https://formspree.io/f/meqnrvzg" method="post">
+        <h1>Insurance Information</h1>
+        <label class="main" for="insurance-name">Insurance Provider</label>
+        <input class="beautify" type="text" name="insurance-name" id="insurance-name" placeholder="Enter your insurance provider's name here"/><br/>
+        <label class="main" for="amount-disbursed">Amount Disbursed</label>
+        <input class="beautify" type="text" name="amount-disbursed" id="amount-disbursed" placeholder="Enter the amount to be disbursed here"/><br/>
+        <button type="submit">Confirm</button>
+      </form>
+    </div>
+    <div class="container left shaded-container" id="credit-card-fillout-form">
+      <form id="payment-processing" action="https://formspree.io/f/meqnrvzg" method="post">
+        <h1>Credit Card Information</h1>
+        <label class="main" for="name-on-card">Name on Card</label>
+        <input class="beautify" type="text" name="name-on-card" id="name-on-card" placeholder="Enter the name on the card here"/><br/>
+        <label class="main" for="credit-card-number">Credit Card Number</label>
+        <input class="beautify" type="number" name="credit-card-number" id="credit-card-number" placeholder="Enter your credit card number here"/><br/>
+        <label class="main" for="expiration-date">Expiration Date</label>
+        <input class="beautify" type="datetime-local" name="credit-card-expiration" id="credit-card-expiration" placeholder="Enter the expiration date here"/><br/>
+        <label class="main" for="security-code">Security Code</label>
+        <input class="beautify" type="number" name="credit-card-security-code" id="credit-card-security-code" placeholder="Enter the security code here"/><br/>
+        <label class="main" for="billing-address">Billing Address</label>
+        <input class="beautify" type="text" name="credit-card-billing-address" id="credit-card-billing-address" placeholder="Enter the billing address here"/><br/>
+        <button type="submit">Schedule / Reschedule Appointment</button>
+      </form>
+    </div>
+  </body>
+</html>

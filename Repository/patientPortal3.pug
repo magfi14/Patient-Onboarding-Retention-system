@@ -1,0 +1,24 @@
+doctype html:5
+html
+    head 
+        title Appointment Selection Page
+        include elements/head.pug
+    body
+        include elements/navigation.pug
+        div.container
+            h1 Doctor name: 
+                span#doctor-name 
+        div.container.left.shaded-container#doctor-selection-form
+            form(id="doctor-selection" action="https://formspree.io/f/myyonlpk" method="post")
+                label.main(for = "doctor") List of Appointments
+                p.instructions Select the desired appointment time from the list below. You can only select <b>one</b> appointment at a time. 
+                input(type="radio" name="appointment" id="appointment" value="Tuesday 9:00 AM")
+                label.internal(for = "appointment") Tuesday 9:00 AM
+                br
+                input(type="radio" name="appointment" id="appointment" value="Tuesday 10:00 AM")
+                label.internal(for = "appointment") Tuesday 10:00 AM
+                br
+                input(type="radio" name="appointment" id="appointment" value="Tuesday 11:00 AM")
+                label.internal(for = "appointment") Tuesday 11:00 AM
+                br
+                button(type="button" onclick="window.location.href='patientPortal4.html'") Confirm

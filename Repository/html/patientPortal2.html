@@ -1,0 +1,34 @@
+<!DOCTYPE html:5>
+<html>  
+  <head> 
+    <title>Appointment Goal Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <viewport width="device-width" initial-scale="1"></viewport>
+    <link rel="stylesheet" href="../../CSS/styles.css"/>
+    <script src="../../JavaScript/config.js"></script>
+  </head>
+  <body> 
+    <nav> 
+      <ul>
+        <li class="navbar-title">Patient Onboarding & Retention System (PORES)</li>
+        <li> <a href="patientPortal1.html">Schedule Appointment (Patient Portal)</a></li>
+        <li> <a href="login.html">Staff Portal</a></li>
+      </ul>
+    </nav>
+    <div class="container left shaded-container" id="patient-intake">
+      <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
+      <iframe class="airtable-embed airtable-dynamic-height" src="https://airtable.com/embed/shrgNy1EsHshhgdvc?backgroundColor=blue" frameborder="0" onmousewheel="" width="100%" height="1368" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    </div>
+    <div class="container left shaded-container" id="doctor-selection-form">
+      <form id="appointment-goal" action="https://formspree.io/f/mdobwdje" method="post">
+        <h1>Doctor</h1>
+        <p class="instructions">Select the doctor from the list below you would like to schedule an appointment with. You can only select <b>one</b> doctor. The doctors available will match closest to your appointment goal.</p>
+        <input type="radio" name="doctor" id="doctor" value="Dr. Smith"/>
+        <label class="internal" for="doctor">Dr. Smith</label><br/>
+        <input type="radio" name="doctor" id="doctor" value="Dr. Jones"/>
+        <label class="internal" for="doctor">Dr. Jones</label><br/>
+        <button type="button" onclick="window.location.href='patientPortal3.html'">Confirm</button>
+      </form>
+    </div>
+  </body>
+</html>

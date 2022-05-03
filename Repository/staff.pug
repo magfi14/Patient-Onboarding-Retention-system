@@ -1,0 +1,102 @@
+doctype html:5
+- const role = 'Staff'
+- var patientExists = false
+- var patientPresent = false
+- var currentRole = ''
+html 
+    head 
+        title #{role} Portal
+        include elements/head.pug
+    body
+        include elements/navigation.pug
+        case currentRole
+            when 'Medical Assistant'
+                div.container.left#medic-assist-portal
+                    p You are currently viewing the <b>#{currentRole}</b> portal. You are logged in as a <b>#{role}</b>.
+                    include elements/detailreceiverform.pug
+                    if patientExists
+                        button.small(type='button' onclick='') Get/Clear Personal Information
+                        p#patient-name
+                        p#insurance-provider
+                        p#height
+                        p#weight
+                        div#appointments
+                            p#appointment-date
+                            p#appointment-time
+                            button.small(type='button' onclick='') Select Appointment
+                        button.small(type='button' onclick='') Accept Appointment
+                        button.small(type='button' onclick='') Reject Appointment
+                    else
+                        p Error. The patient you were looking for is not onboarded into our system. Please search for another patient.
+            when 'Administrative Medical Assistant'
+                div.container.left#admin-medic-assist-portal
+                    p You are currently viewing the <b>#{role}</b> portal. You are logged in as a <b>#{role}</b>.
+                    include elements/detailreceiverform.pug
+                    if patientExists
+                        - let appointmentAccepted = false
+                        button.small(type = "button" onclick="" hidden) Get/Clear Personal Information
+                        p#patient-name(hidden)
+                        p#insurance-provider(hidden)
+                        p#height(hidden)
+                        p#weight(hidden)
+                        if patientPresent
+                            div#appointments
+                                p#appointment-date
+                                p#appointment-time
+                                button.small(type="button" onclick="") Select Appointment
+                            button.small(type="button" onclick="") Accept Appointment
+                            if appointmentAccepted
+                                button.small(type="button" onclick="") Process Insurance Payment
+                        else 
+                            p The patient is not present. The appointment cannot be accepted.
+                        button.small(type="button" onclick="" hidden) Reject Appointment
+                    else
+                        p Error. The patient you were looking for is not onboarded into our system. Please search for another patient.
+            when 'Clinical Medical Assistant'
+                div.container.left#clinical-medic-assist-portal
+                    p You are currently viewing the <b>#{role}</b> portal. You are logged in as a <b>#{role}</b>.
+                    include elements/detailreceiverform.pug
+                    if patientExists
+                        - let appointmentAccepted = false
+                        button.small(type = "button" onclick="" hidden) Get/Clear Personal Information
+                        p#patient-name(hidden)
+                        p#insurance-provider(hidden)
+                        p#height(hidden)
+                        p#weight(hidden)
+                        if patientPresent
+                            div#appointments
+                                p#appointment-date
+                                p#appointment-time
+                                button.small(type="button" onclick="") Select Appointment
+                            button.small(type="button" onclick="") Accept Appointment
+                            if appointmentAccepted
+                                button.small(type="button" onclick="") Process Insurance Payment
+                        else 
+                            p The patient is not present. The appointment cannot be accepted.
+                        button.small(type="button" onclick="" hidden) Reject Appointment
+                    else
+                        p Error. The patient you were looking for is not onboarded into our system. Please search for another patient.
+            when 'Receptionist'
+                div.container.left#receptionist-portal
+                    p You are currently viewing the <b>#{role}</b> portal. You are logged in as a <b>#{role}</b>.
+                    include elements/detailreceiverform.pug
+                    if patientExists
+                        - let appointmentAccepted = false
+                        button.small(type = "button" onclick="" hidden) Get/Clear Personal Information
+                        p#patient-name(hidden)
+                        p#insurance-provider(hidden)
+                        p#height(hidden)
+                        p#weight(hidden)
+                        if patientPresent
+                            div#appointments
+                                p#appointment-date
+                                p#appointment-time
+                                button.small(type="button" onclick="") Select Appointment
+                            button.small(type="button" onclick="") Accept Appointment
+                            if appointmentAccepted
+                                button.small(type="button" onclick="") Process Insurance Payment
+                        else 
+                            p The patient is not present. The appointment cannot be accepted.
+                        button.small(type="button" onclick="" hidden) Reject Appointment
+                    else
+                        p Error. The patient you were looking for is not onboarded into our system. Please search for another patient.

@@ -1,0 +1,35 @@
+<!DOCTYPE html:5>
+<html>
+  <head> 
+    <title>Appointment Selection Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <viewport width="device-width" initial-scale="1"></viewport>
+    <link rel="stylesheet" href="../../CSS/styles.css"/>
+    <script src="../../JavaScript/config.js"></script>
+  </head>
+  <body>
+    <nav> 
+      <ul>
+        <li class="navbar-title">Patient Onboarding & Retention System (PORES)</li>
+        <li> <a href="patientPortal1.html">Schedule Appointment (Patient Portal)</a></li>
+        <li> <a href="login.html">Staff Portal</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <h1>Doctor name: <span id="doctor-name"> </span></h1>
+    </div>
+    <div class="container left shaded-container" id="doctor-selection-form">
+      <form id="doctor-selection" action="https://formspree.io/f/myyonlpk" method="post">
+        <label class="main" for="doctor">List of Appointments</label>
+        <p class="instructions">Select the desired appointment time from the list below. You can only select <b>one</b> appointment at a time. </p>
+        <input type="radio" name="appointment" id="appointment" value="Tuesday 9:00 AM"/>
+        <label class="internal" for="appointment">Tuesday 9:00 AM</label><br/>
+        <input type="radio" name="appointment" id="appointment" value="Tuesday 10:00 AM"/>
+        <label class="internal" for="appointment">Tuesday 10:00 AM</label><br/>
+        <input type="radio" name="appointment" id="appointment" value="Tuesday 11:00 AM"/>
+        <label class="internal" for="appointment">Tuesday 11:00 AM</label><br/>
+        <button type="button" onclick="window.location.href='patientPortal4.html'">Confirm</button>
+      </form>
+    </div>
+  </body>
+</html>

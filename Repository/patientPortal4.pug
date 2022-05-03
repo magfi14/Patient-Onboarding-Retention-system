@@ -1,0 +1,48 @@
+- var payment_plans = ['Insurance', 'Credit Card', 'Cash', 'Check']
+
+doctype html:5
+html
+    head 
+        title Payment Processing Page
+        include elements/head.pug
+    body
+        include elements/navigation.pug
+        div.container.left.shaded-container#payment-plan-selection-form
+            form(id="payment-processing" action="https://formspree.io/f/meqnrvzg" method="post")
+                h1 Payment Processing
+                label.main(for = "payment-type") Payment Plan
+                p.instructions Select a payment plan from below.
+                each payment_plan in payment_plans
+                    input(type="radio" name="payment-type" id="payment-type" value=payment_plan)
+                    label.internal(for = "payment-type") #{payment_plan}
+                    br
+                button(type="submit") Confirm
+        div.container.left.shaded-container#insurance-fillout-form
+            form(id="payment-processing" action="https://formspree.io/f/meqnrvzg" method="post")
+                h1 Insurance Information
+                label.main(for = "insurance-name") Insurance Provider
+                input.beautify(type="text" name="insurance-name" id="insurance-name" placeholder="Enter your insurance provider's name here")
+                br
+                label.main(for = "amount-disbursed") Amount Disbursed
+                input.beautify(type="text" name="amount-disbursed" id="amount-disbursed" placeholder="Enter the amount to be disbursed here")
+                br
+                button(type="submit") Confirm
+        div.container.left.shaded-container#credit-card-fillout-form
+            form(id="payment-processing" action="https://formspree.io/f/meqnrvzg" method="post")
+                h1 Credit Card Information
+                label.main(for = "name-on-card") Name on Card
+                input.beautify(type="text" name="name-on-card" id="name-on-card" placeholder="Enter the name on the card here")
+                br
+                label.main(for = "credit-card-number") Credit Card Number
+                input.beautify(type="number" name="credit-card-number" id="credit-card-number" placeholder="Enter your credit card number here")
+                br
+                label.main(for = "expiration-date") Expiration Date
+                input.beautify(type="datetime-local" name="credit-card-expiration" id="credit-card-expiration" placeholder="Enter the expiration date here")
+                br
+                label.main(for = "security-code") Security Code
+                input.beautify(type="number" name="credit-card-security-code" id="credit-card-security-code" placeholder="Enter the security code here")
+                br
+                label.main(for = "billing-address") Billing Address
+                input.beautify(type="text" name="credit-card-billing-address" id="credit-card-billing-address" placeholder="Enter the billing address here")
+                br
+                button(type="submit") Schedule / Reschedule Appointment

@@ -1,0 +1,14 @@
+doctype html lang="en" 
+html 
+    head 
+        title Appointment Scheduling Page
+        include elements/head.pug
+    body
+        include elements/navigation.pug
+        div.button-container
+            button.big.tooltip#sched-appt-opt1(type="button" name="Schedule" onclick="window.location.href='patientPortal2.html'") Schedule a New Appointment
+                    span.tooltiptext Click to schedule a <b>new appointment</b>. If you are not a current patient, upon providing us your information, we will onboard you into our online database. If you are a current patient, your appointment details will be added to your file.
+            button.big.tooltip#sched-appt-opt2(type="button" name="Reschedule" onclick="window.location.href='patientPortal2.html'") Reschedule a Current Appointment
+                span.tooltiptext Click to reschedule a <b>current appointment</b>. <i>You must be a current patient in the system to reschedule an appointment.</i>
+            button.big.tooltip#sched-appt-opt3(type="button" name="Cancel" onclick="window.location.href='patientPortal1.html'") Cancel a Current Appointment
+                span.tooltiptext Click to <b>cancel</b> your current appointments. <i>You must be a current patient in the system to cancel an appointment.</i>
